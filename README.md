@@ -1,6 +1,6 @@
 # Juice-CLI
 
-`juice` launches a dancing juice box (with 2 hands and 2 legs) in your terminal.
+`juice` launches an animated juice box in your terminal.
 
 ## One-command run (no publish needed)
 
@@ -21,6 +21,17 @@ juice
 ```bash
 npm start
 ```
+
+## Controls / settings
+
+`juice` now runs continuously until you quit.
+
+- `A` changes `animation` (dancing, pouring, punching)
+- `C` changes `color` (classic-orange, fruit-punch-red, berry-blue, lemon-yellow, apple-green, grape-purple, peach, watermelon-pink)
+- `Q` quits
+- `Ctrl+C` exits
+
+Selected settings are saved to `~/.juice-cli-settings.json`.
 
 ## Publish to your GitHub (`3x1om`)
 
