@@ -2,6 +2,12 @@
 
 `juice` launches a dancing juice box (with 2 hands and 2 legs) in your terminal.
 
+## One-command run (no publish needed)
+
+```bash
+bash -c 'set -e; if command -v dnf >/dev/null 2>&1; then sudo dnf install -y git nodejs npm; elif command -v pacman >/dev/null 2>&1; then sudo pacman -Sy --needed git nodejs npm; elif command -v apt >/dev/null 2>&1; then sudo apt update && sudo apt install -y git nodejs npm; elif command -v zypper >/dev/null 2>&1; then sudo zypper install -y git nodejs npm; else echo "Unsupported distro: install git + nodejs + npm manually."; exit 1; fi; tmpdir=$(mktemp -d); git clone --depth 1 https://github.com/3x1om/Juice-CLI.git "$tmpdir/Juice-CLI"; cd "$tmpdir/Juice-CLI"; npm install; npm start'
+```
+
 ## Install (local dev)
 
 ```bash
@@ -32,17 +38,3 @@ If the repo does not exist yet, create it first at:
 - https://github.com/new
 
 Use repository name: `Juice-CLI`
-
-## Optional: publish to npm
-
-```bash
-npm login
-npm publish --access public
-```
-
-After publish, users can run:
-
-```bash
-npm i -g juice-cli
-juice
-```
